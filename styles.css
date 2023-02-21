@@ -1,0 +1,65 @@
+*, *::before, *::after {
+box-sizing: border-box;
+}
+
+* {
+margin: 0;
+padding: 0;
+font: inherit;
+}
+
+html {
+color-scheme: dark light;
+}
+
+body {
+height: 100vh;
+}
+
+img, picture, svg, video {
+display: block;
+max-width: 100%;
+}
+
+body {
+  background-image: url(./assets/table.png);
+  /* background-repeat:no-repeat;
+  background-size: cover; */
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  width: 50%;
+  margin: auto auto; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.new-deck:hover,
+.draw-cards:hover {
+  background: green;
+  color: #fff;
+}
+
+.new-deck,
+.draw-cards {
+  margin: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 0;
+  font-weight: bold;
+}
