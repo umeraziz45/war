@@ -1,8 +1,9 @@
 const newDeck = document.querySelector('.new-deck');
 const drawCards = document.querySelector('.draw-cards');
 const cardsArea = document.querySelector('.cards');
+const remainingCards = document.querySelector('.remaining-cards');
 
-let deckId;
+let deckId ;
 
 const getNewDeck = () => {
   fetch(`https://deckofcardsapi.com/api/deck/new/`)
@@ -14,6 +15,9 @@ const getNewDeck = () => {
     }
   ) 
 }
+
+console.log(deckId)
+
 const drawTwo = () => {
   fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then( res => res.json())
@@ -26,6 +30,8 @@ const drawTwo = () => {
        cardImg.src = obj.image;
        cardsArea.insertAdjacentElement('beforeend', cardImg);
       }
+
+      remainingCards.textContent = `Remaining Cards: ${data.remaining}`;
 
     })
 }
